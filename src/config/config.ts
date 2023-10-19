@@ -1,11 +1,11 @@
 const config = {
     firebase: {
-        apiKey: 'AIzaSyA41Pxu7gW5Po1hr22K2M_XEjHmRBI15No',
-        authDomain: 'blog-typescript-ebe75.firebaseapp.com',
-        projectId: 'blog-typescript-ebe75',
-        storageBucket: 'blog-typescript-ebe75.appspot.com',
-        messagingSenderId: '436243242475',
-        appId: '1:436243242475:web:2db4391820c5e544714dae'
+        apiKey: process.env.GOOGLE_AUTH_APIKEY,
+        authDomain: process.env.GOOGLE_AUTH_AUTHDOMAIN,
+        projectId: process.env.GOOGLE_PROJECTID,
+        storageBucket: process.env.GOOGLE_STORAGEBUCKET,
+        messagingSenderId: process.env.GOOGLE_MESSAGESENDERID,
+        appId: process.env.GOOGLE_APPID
     },
     server: {
         url: 'http://localhost:4002'
