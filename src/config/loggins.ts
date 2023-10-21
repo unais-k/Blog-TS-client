@@ -20,7 +20,8 @@ const error = (message: any, namespace?: string) => {
     if (typeof message === 'string') {
         console.log(`[${getDate()}] [${namespace || DEFAULT_NAMESPACE}] [ERROR] ${message}`);
     } else {
-        console.log(`[${getDate()}] [${namespace || DEFAULT_NAMESPACE}] [ERROR]`, message);
+        // console.log(`[${getDate()}] [${namespace || DEFAULT_NAMESPACE}] [ERROR]`, message);
+        console.log(message, '---------', namespace);
     }
 };
 
