@@ -2,11 +2,11 @@ import IUser from './user';
 
 export default interface IBlog {
     _id: string;
-    title: string;
+    title?: string | any;
     author?: string | IUser | any;
-    content: string;
-    headline: string;
-    picture?: string;
-    createdAt: string;
-    updatedAt: string;
+    content?: string | any;
+    headline?: string | any;
+    picture?: string | any;
+    createdAt?: string | any;
+    updatedAt?: string | any;
 }

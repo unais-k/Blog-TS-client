@@ -2,11 +2,11 @@ import React from 'react';
 import { Container, Col, Row } from 'reactstrap';
 
 export interface IHeaderProps {
-    height?: string;
-    image?: string;
-    children?: string;
-    title: string;
-    headline: string;
+    height?: string | any;
+    image?: string | any;
+    children?: any;
+    title: string | any;
+    headline: string | any;
 }
 
 const Header: React.FunctionComponent<IHeaderProps> = (props) => {

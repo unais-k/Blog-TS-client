@@ -86,7 +86,6 @@ const BlogPage: React.FunctionComponent<IPageProps> = (props) => {
             setDeleting(false);
         }
     };
-    console.log(blog, 'bllllllllllllllllllllog');
 
     if (loading) return <LoadingComponent>Loading Blog ...</LoadingComponent>;
 
@@ -109,7 +108,7 @@ const BlogPage: React.FunctionComponent<IPageProps> = (props) => {
                         </Button>
                     </ModalFooter>
                 </Modal>
-                <Header image={blog.picture || undefined} headline={blog.headline} title={blog.title}>
+                <Header image={blog?.picture || undefined} headline={blog?.headline} title={blog?.title}>
                     <p className="text-white">
                         Posted by {blog?.author && (blog?.author as IUser).name} on {blog?.author && new Date(blog?.createdAt).toLocaleString()}
                     </p>
