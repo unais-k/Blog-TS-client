@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from 'reactstrap';
 
 export interface ICenterPieceProps {
-    children?: any;
+    children?: React.ReactNode;
 }
 
 const CenterPiece: React.FunctionComponent<ICenterPieceProps> = ({ children }) => {

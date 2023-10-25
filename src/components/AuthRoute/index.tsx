@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import logging from '../../config/loggins';
+import logging from '../../config/loggings';
 import UserContext from '../../contexts/user';
 import { Link } from 'react-router-dom';
 
 export interface IAuthRouteProps {
-    children?: any;
+    children: React.ReactNode;
 }
 
 const AuthRoute: React.FunctionComponent<IAuthRouteProps> = (props) => {
@@ -16,7 +16,7 @@ const AuthRoute: React.FunctionComponent<IAuthRouteProps> = (props) => {
         logging.info('Unauthorized, redirecting.');
         return <Link to="/login" />;
     } else {
-        return <>{children}</>;
+        return <React.Fragment>{children}</React.Fragment>;
     }
 };
 

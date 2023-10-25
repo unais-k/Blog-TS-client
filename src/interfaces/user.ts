@@ -1,7 +1,7 @@
 export default interface IUser {
-    _id: string;
-    uid: string;
-    name: string;
+    _id: string | any;
+    uid: string | any;
+    name: string | any;
 }
 
 export const DEFAULT_USER: IUser = {

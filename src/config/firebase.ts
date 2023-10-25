@@ -9,4 +9,6 @@ export const Providers = {
 };
 
 export const auth = getAuth(Firebase);
+auth.languageCode = 'it';
+// eslint-disable-next-line
 export default { auth, Providers };

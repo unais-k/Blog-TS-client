@@ -27,7 +27,7 @@ Loading.defaultProps = {
 export interface ILoadingComponentProps {
     card?: boolean;
     dotType?: string;
-    children?: any;
+    children?: React.ReactNode;
 }
 
 const LoadingComponent: React.FunctionComponent<ILoadingComponentProps> = (props) => {

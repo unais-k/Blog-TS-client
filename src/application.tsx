@@ -4,7 +4,7 @@ import routes from './config/routes';
 import { UserContextProvider, initialUserState, userReducer } from './contexts/user';
 import LoadingComponent from './components/LoadingComponent';
 import { Validate } from './modules/auth';
-import logging from './config/loggins';
+import logging from './config/loggings';
 import AuthRoute from './components/AuthRoute';
 
 export interface IApplicationProps {}
@@ -18,8 +18,6 @@ const Application: React.FunctionComponent<IApplicationProps> = (props) => {
         setTimeout(() => {
             CheckLocalStorageForCredentials();
         }, 1000);
-
-        // eslint-disable-next-line
     }, []);
 
     const CheckLocalStorageForCredentials = () => {
@@ -32,16 +30,22 @@ const Application: React.FunctionComponent<IApplicationProps> = (props) => {
             setAuthStage('No credentials found');
             setTimeout(() => {
                 setLoading(false);
-            }, 500);
+            }, 1000);
         } else {
             return Validate(fire_token, (error, user) => {
                 if (error) {
                     logging.error(error);
+                    setAuthStage('User not validate, logging out ..');
                     userDispatch({ type: 'logout', payload: initialUserState });
-                    setLoading(false);
+                    setTimeout(() => {
+                        setLoading(false);
+                    }, 1000);
                 } else if (user) {
+                    setAuthStage('User authenticated');
                     userDispatch({ type: 'login', payload: { user, fire_token } });
-                    setLoading(false);
+                    setTimeout(() => {
+                        setLoading(false);
+                    }, 1000);
                 }
             });
         }

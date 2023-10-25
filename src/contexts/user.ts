@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import React, { createContext } from 'react';
 import IUser, { DEFAULT_FIRE_TOKEN, DEFAULT_USER } from '../interfaces/user';
 
 export interface IUserState {
@@ -26,11 +26,9 @@ export const userReducer = (state: IUserState, action: IUserActions) => {
     switch (action.type) {
         case 'login':
             localStorage.setItem('fire_token', fire_token);
-
             return { user, fire_token };
         case 'logout':
             localStorage.removeItem('fire_token');
-
             return initialUserState;
         default:
             return state;
